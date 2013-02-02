@@ -60,7 +60,9 @@
 (defn app [request]
   (case (:uri request)
     "/counter"
-      (let [n (.incr memcached-client counter-key 1)]
+      (let [^MemcachedClient mc memcached-client
+            ^String k counter-key
+            n (.incr mc k 1)]
         {:status 200
          :headers {"Content-Type" "image/gif"}
          :body (ByteArrayInputStream. (make-gif-counter n))})
