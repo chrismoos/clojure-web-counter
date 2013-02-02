@@ -69,5 +69,5 @@
     "/"
       {:status 200
        :headers {"Content-Type" "text/html"}
-       :body (str "<html><body><p>You are visitor number:</p><img src=\"/counter\"/></body></html>")}
+       :body (str "<html><body><p>You are visitor number:</p><img src=\"/counter\"/><br/><br/>Read about this site <a href=\"http://www.chrismoos.com/2013/01/31/clojure-ring-and-1990s-counters/\">here</a>.</body></html>")}
     {:status 404}))
